@@ -22,6 +22,8 @@ st.set_page_config(
 )
 
 BASE = Path(__file__).resolve().parent
+
+TIPOS_VALIDOS = ["Gala", "Novia", "Quinceañera"]
 ETAPAS = ["Corte", "Ensamblaje", "Acabados y detalles", "Planchado"]
 
 st.markdown(
@@ -103,6 +105,191 @@ st.markdown(
         font-weight: 850 !important;
     }
     div[data-testid="stDataFrame"] { border-radius: 12px; overflow: hidden; }
+
+
+    /* =======================================================
+       CONTRASTE GENERAL: FONDO OSCURO = TEXTO CLARO
+       ======================================================= */
+
+    /* Texto normal de Streamlit */
+    .stApp,
+    .stApp p,
+    .stApp li,
+    .stApp small,
+    .stApp strong,
+    .stApp em {
+        color: #EAF3F8;
+    }
+
+    /* Etiquetas de filtros, selectores e inputs */
+    div[data-testid="stSelectbox"] label,
+    div[data-testid="stMultiSelect"] label,
+    div[data-testid="stNumberInput"] label,
+    div[data-testid="stTextInput"] label,
+    div[data-testid="stDateInput"] label,
+    div[data-testid="stSlider"] label,
+    div[data-testid="stRadio"] label,
+    div[data-testid="stCheckbox"] label,
+    div[data-testid="stFileUploader"] label {
+        color: #EAF3F8 !important;
+        font-weight: 750 !important;
+    }
+
+    div[data-testid="stSelectbox"] label p,
+    div[data-testid="stMultiSelect"] label p,
+    div[data-testid="stNumberInput"] label p,
+    div[data-testid="stTextInput"] label p,
+    div[data-testid="stDateInput"] label p,
+    div[data-testid="stSlider"] label p,
+    div[data-testid="stRadio"] label p,
+    div[data-testid="stCheckbox"] label p {
+        color: #EAF3F8 !important;
+    }
+
+    /* Selectores: fondo claro, texto oscuro para legibilidad */
+    div[data-baseweb="select"] > div {
+        background-color: #F4F8FB !important;
+        border-color: #B9CFDC !important;
+        color: #102331 !important;
+    }
+
+    div[data-baseweb="select"] span,
+    div[data-baseweb="select"] input {
+        color: #102331 !important;
+    }
+
+    /* Menú desplegable */
+    ul[role="listbox"],
+    div[role="listbox"] {
+        background: #F7FAFC !important;
+        color: #102331 !important;
+    }
+
+    li[role="option"],
+    div[role="option"] {
+        color: #102331 !important;
+        background: #F7FAFC !important;
+    }
+
+    li[role="option"]:hover,
+    div[role="option"]:hover {
+        background: #DCEAF2 !important;
+    }
+
+    /* Tabs */
+    button[data-baseweb="tab"] {
+        color: #BFD3DF !important;
+        font-weight: 800 !important;
+    }
+
+    button[data-baseweb="tab"][aria-selected="true"] {
+        color: #FFFFFF !important;
+        border-bottom-color: #63D4F2 !important;
+    }
+
+    button[data-baseweb="tab"] p {
+        color: inherit !important;
+    }
+
+    /* Captions y mensajes secundarios */
+    div[data-testid="stCaptionContainer"] p,
+    .stCaptionContainer,
+    .st-emotion-cache-qdbtli {
+        color: #AFC6D5 !important;
+    }
+
+    /* Alertas */
+    div[data-testid="stAlert"] p,
+    div[data-testid="stAlert"] li {
+        color: inherit !important;
+    }
+
+    /* Botones oscuros con texto blanco */
+    .stButton > button {
+        background: linear-gradient(180deg, #17617F, #0E435C) !important;
+        color: #FFFFFF !important;
+        border: 1px solid #54CDEB !important;
+    }
+
+    .stButton > button p,
+    .stButton > button span {
+        color: #FFFFFF !important;
+    }
+
+    .stButton > button:hover {
+        background: linear-gradient(180deg, #1D789B, #12536E) !important;
+        border-color: #8CEBFF !important;
+        color: #FFFFFF !important;
+    }
+
+    .stDownloadButton > button {
+        background: #17465F !important;
+        color: #FFFFFF !important;
+        border: 1px solid #65C9EA !important;
+    }
+
+    .stDownloadButton > button p,
+    .stDownloadButton > button span {
+        color: #FFFFFF !important;
+    }
+
+    /* Métricas */
+    div[data-testid="stMetricDelta"] {
+        color: #82E6BE !important;
+    }
+
+    /* Contenedores y separadores */
+    hr {
+        border-color: rgba(190, 220, 236, .18) !important;
+    }
+
+    /* Texto dentro de tarjetas claras: mantener oscuro */
+    .light-card,
+    .light-card *,
+    .light-card p,
+    .light-card span,
+    .light-card strong,
+    .light-card b {
+        color: #132635 !important;
+    }
+
+    /* Tarjetas azules/oscuras: forzar texto claro */
+    .blue-card,
+    .blue-card *,
+    .hero,
+    .hero *,
+    .dark-card,
+    .dark-card *,
+    .panel,
+    .panel * {
+        color: #F5FAFD;
+    }
+
+    /* Excepciones para colores semánticos */
+    .score { color: #7DD8FF !important; }
+    .muted { color: #AFC5D4 !important; }
+    .kit-ready { color: #6FE2B8 !important; }
+    .kit-prep { color: #FFD47A !important; }
+    .kit-block { color: #FF9A9A !important; }
+
+    /* Texto de ayuda debajo de widgets */
+    div[data-testid="stWidgetLabel"] p {
+        color: #EAF3F8 !important;
+    }
+
+    /* Expander */
+    details summary,
+    details summary span,
+    details summary p {
+        color: #F0F7FB !important;
+    }
+
+    /* Código si aparece */
+    code {
+        color: #D7F2FF !important;
+        background: #102B3D !important;
+    }
+
     </style>
     """,
     unsafe_allow_html=True,
@@ -238,6 +425,17 @@ def cargar_datos():
 
 
 P, KITS, W, H, CAL, PAR, O, R = cargar_datos()
+
+# Validación del alcance real del taller: solo tres tipos de vestido.
+tipos_detectados = sorted(P["Tipo_Vestido"].dropna().astype(str).unique().tolist())
+tipos_no_validos = [t for t in tipos_detectados if t not in TIPOS_VALIDOS]
+if tipos_no_validos:
+    st.error(
+        "Se encontraron tipos de vestido fuera del alcance definido: "
+        + ", ".join(tipos_no_validos)
+        + ". Solo se admiten Gala, Novia y Quinceañera."
+    )
+    st.stop()
 
 # ============================================================
 # UTILIDADES
@@ -719,7 +917,7 @@ f1, f2 = st.columns(2)
 with f1:
     tipo_sel = st.selectbox(
         "Tipo de vestido",
-        ["Todos"] + sorted(P["Tipo_Vestido"].dropna().unique().tolist()),
+        ["Todos"] + TIPOS_VALIDOS,
     )
 with f2:
     comp_sel = st.selectbox("Complejidad", ["Todas", "Alta", "Media", "Baja"])
